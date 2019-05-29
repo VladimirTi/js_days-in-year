@@ -1,22 +1,15 @@
 function daysInYear (year) {
   const promise = new Promise ((resolve, reject) => {
-    if (typeof(year) === 'number' && Number.isInteger(year)) {
-      resolve(year);
-    } else {
-      reject('exception');
-    }
+    typeof(year) === 'number' && Number.isInteger(year) ? resolve(year) : reject('exception');
   });
 
-  promise.then(
+  promise
+  .then(
     year => { 
-      if (year % 400 === 0 || !(year % 100 === 0 || !(year % 4 === 0)  )) {
-        console.log(366);
-      } else {
-        console.log(365);
-      }
-     },
-    error => console.log(error)
-  );
+      year % 400 === 0 || !(year % 100 === 0 || !(year % 4 === 0)) ? console.log(366) : console.log(365);
+     }
+  )
+  .catch(error => console.log(error));
 }
 
 daysInYear('2019'); // exception
