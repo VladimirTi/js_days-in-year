@@ -7,7 +7,7 @@ function daysInYear (year) {
   .then(
     year => { 
       year % 400 === 0 || !(year % 100 === 0 || !(year % 4 === 0)) ? console.log(366) : console.log(365);
-     }
+    }
   )
   .catch(error => console.log(error));
 }
