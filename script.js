@@ -3,7 +3,7 @@ function daysInYear (year) {
     if (typeof(year) === 'number' && Number.isInteger(year)){
       resolve(year)
     } else {
-      throw new Error('exception')
+      reject(new Error('exception'))
     };
   });
 
